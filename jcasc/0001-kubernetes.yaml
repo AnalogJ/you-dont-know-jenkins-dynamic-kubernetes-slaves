@@ -1,0 +1,26 @@
+credentials:
+  system:
+    domainCredentials:
+      - credentials:
+          - certificate:
+              description: "kubernetes-client-secret"
+              id: "620e25a7-359e-4ec4-8716-97e731260ac0"
+              keyStoreSource:
+                uploaded:
+                  uploadedKeystore: "****"
+              password: "{AQAAABAAAAAg5v2IoK273Im2re5V3T5PVFE8Rv5PPQtWuOkv2X9B6JnPmypui9aBBmiqohCWuwbU}"
+              scope: GLOBAL
+jenkins:
+  clouds:
+    - kubernetes:
+        containerCap: 10
+        containerCapStr: "10"
+        credentialsId: "620e25a7-359e-4ec4-8716-97e731260ac0"
+        jenkinsUrl: "http://10.0.1.110:8080"
+        maxRequestsPerHost: 32
+        maxRequestsPerHostStr: "32"
+        name: "kubernetes"
+        namespace: "jenkins-kube-slaves"
+        podRetention: "onFailure"
+        serverUrl: "https://kubernetes.docker.internal:6443"
+        skipTlsVerify: true

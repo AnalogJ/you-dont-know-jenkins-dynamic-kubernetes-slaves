@@ -1,0 +1,11 @@
+security:
+  globalJobDslSecurityConfiguration:
+    useScriptSecurity: false
+
+unclassified:
+  gitSCM:
+    createAccountBasedOnEmail: false
+    globalConfigEmail: "jenkins-kube@example.com"
+    globalConfigName: "jenkins-kube-example"
+    showEntireCommitSummaryInChanges: false
+    useExistingAccountWithSameEmail: false
