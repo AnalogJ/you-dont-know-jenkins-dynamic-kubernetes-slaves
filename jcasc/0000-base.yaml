@@ -1,3 +1,6 @@
+jenkins:
+  systemMessage: "Configured using Jenkins Configuration as Code Plugin"
+
 security:
   globalJobDslSecurityConfiguration:
     useScriptSecurity: false

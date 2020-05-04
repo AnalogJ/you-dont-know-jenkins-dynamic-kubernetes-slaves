@@ -1,0 +1,29 @@
+jobs:
+  - script: >
+      job('test-freestyle') {
+          scm {
+            git('https://github.com/LableOrg/java-maven-junit-helloworld.git')
+          }
+          steps {
+            maven('-e clean test')
+          }
+      }
+
+  - script: >
+          pipelineJob('test-pipeline') {
+            definition {
+              cps {
+                script("""\
+                  pipeline {
+                    agent any
+                    stages {
+                      stage ('test') {
+                        steps {
+                          echo "hello"
+                        }
+                      }
+                    }
+                  }""".stripIndent())
+              }
+            }
+          }
